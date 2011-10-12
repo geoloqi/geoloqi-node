@@ -5,10 +5,11 @@
   "main": "index.js",
   "author": "Kyle Drake <kyledrake@gmail.com>",
   "repository": { "type":"git", "url":"http://github.com/geoloqi/geoloqi-js.git" },
-  "dependencies": {},
+  "dependencies": {
+    "underscore": ""
+  },
   "devDependencies": {
     "node-fakeweb": "0.0.3",
-    "vows": "0.5.11",
     "assert": "0.4.9"
   }
 }
