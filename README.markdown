@@ -15,8 +15,8 @@ Geoloqi uses OAuth2 for authentication, but if you're only working with your own
 
 In Node.js:
 
-    var geoloqi = require('geoloqi'),
-        session = new Session({'access_token':'YOUR ACCESS TOKEN'});
+    var geoloqi = require('geoloqi');
+    var session = new geoloqi.Session({'access_token':'YOUR ACCESS TOKEN'});
     
     session.get('/account/username', function(result, err) {
       if(err) {
@@ -28,8 +28,8 @@ In Node.js:
 
 For a post:
 
-    var geoloqi = require('geoloqi'),
-        session = new Session({'access_token':'YOUR ACCESS TOKEN'});
+    var geoloqi = require('geoloqi');
+    var session = new geoloqi.Session({'access_token':'YOUR ACCESS TOKEN'});
 
     session.post('/account/profile', {'name':'Baron Ünderbheit'}, function(result, err) {
       if(err) {
