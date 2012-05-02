@@ -24,7 +24,7 @@ In Node.js:
       } else {
         console.log(result.username);
       }
-    }
+    });
 
 For a post:
 
@@ -37,7 +37,7 @@ For a post:
       } else {
         console.log(result);
       }
-    }
+    });
 
 Found a bug?
 ---
