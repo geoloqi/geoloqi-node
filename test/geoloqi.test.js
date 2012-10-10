@@ -35,15 +35,5 @@ vows.describe('Geoloqi Session').addBatch({
     'we get an ok response': function (result, err) {
       assert.equal(result.result, 'ok');
     }
-  },
-
-  'when authorizing a code': {
-    topic: function() {
-      var session = new geoloqi.Session({}, {'client_id': 'idtest', 'client_secret': 'secrettest', 'redirect_uri':'http://example.org/test'});
-      session.authorize('abcd1234', this.callback);
-    },
-    'we get an access token json': function(result, err) {
-      assert.equal(result.access_token, '4321dcba');
-    }
   }
 }).run();

@@ -11,33 +11,30 @@ Installation
 
 Basic Usage
 ---
-Geoloqi uses OAuth2 for authentication, but if you're only working with your own account, you don't need to go through the authorization steps! Simply go to your account settings on the [Geoloqi site](http://geoloqi.com), click on "Connections" and copy the OAuth 2 Access Token. You can use this token to run the following examples.
+First, retrieve an application access token from one of your applications on the [applications page](https://developers.geoloqi.com/account/applications). 
 
-In Node.js:
+Here is an example to create a geotrigger:
 
     var geoloqi = require('geoloqi');
-    var session = new geoloqi.Session({'access_token':'YOUR ACCESS TOKEN'});
+    var session = new geoloqi.Session({'access_token':'YOUR APPLICATION ACCESS TOKEN'});
     
-    session.get('/account/username', function(result, err) {
+    session.post('/trigger/create', {
+      "place_name": "Powell's Books",
+      "key":        "powells_books",
+      "type":       "message",
+      "text":       "Welcome to Powell's Books!",
+      "latitude":   45.523334,
+      "longitude":  122.681612,
+      "radius":     150,
+      "trigger_on": "enter"
+    }, function(result, err) {
       if(err) {
         throw new Error('There has been an error! '+err);
       } else {
-        console.log(result.username);
+        console.log(result.trigger_id);
       }
     });
 
-For a post:
-
-    var geoloqi = require('geoloqi');
-    var session = new geoloqi.Session({'access_token':'YOUR ACCESS TOKEN'});
-
-    session.post('/account/profile', {'name':'Baron Ünderbheit'}, function(result, err) {
-      if(err) {
-        throw new Error('There has been an error! '+err);
-      } else {
-        console.log(result);
-      }
-    });
 
 Found a bug?
 ---
@@ -48,9 +45,3 @@ Authors
 * Patrick Arlt
 * Kyle Drake
 * Aaron Parecki
-
-TODO
----
-* OAuth2 (right now you can only use an access token)
-* Plugin for Express
-* Lots of stuff
