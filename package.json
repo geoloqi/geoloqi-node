@@ -12,5 +12,8 @@
     "node-fakeweb": "0.0.3",
     "assert": "0.4.9",
     "vows":   "0.6.4"
+  },
+  "scripts": {
+    "test": "node ./test/geoloqi.test.js"
   }
 }
