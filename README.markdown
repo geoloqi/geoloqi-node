@@ -1,4 +1,4 @@
-Geoloqi library for Node.js
+Geoloqi library for Node.js [![](https://secure.travis-ci.org/geoloqi/geoloqi-node.png)](http://travis-ci.org/geoloqi/geoloqi-node)
 ===
 Powerful, flexible, lightweight interface to the Geoloqi Platform API, written in JavaScript for Node.js!
 
